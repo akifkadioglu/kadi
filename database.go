@@ -23,8 +23,13 @@ type DBType interface {
 	connect() error
 }
 
-func Database[T DBType](database T) error {
-	return database.connect()
+func Database[T DBType](database T, entities ...any) error {
+	err := database.connect()
+	if err != nil {
+		return err
+	}
+	err = db.AutoMigrate(entities...)
+	return err
 }
 
 func DBManager() *gorm.DB {
