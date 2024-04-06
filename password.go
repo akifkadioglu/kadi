@@ -1,4 +1,4 @@
-package kadi
+package kadigo
 
 import "golang.org/x/crypto/bcrypt"
 

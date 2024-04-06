@@ -1,4 +1,4 @@
-package kadi
+package kadigo
 
 import (
 	"encoding/json"
