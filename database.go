@@ -20,7 +20,7 @@ type SQLite struct {
 }
 type DBType interface {
 	PostgreSQL | MySQL | SQLite
-	connect()
+	connect() error
 }
 
 func Database[T DBType](database T) {
