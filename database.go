@@ -23,7 +23,8 @@ type DBType interface {
 	connect() error
 }
 
-func Database[T DBType](database T, entities ...any) error {
+// StartDatabase starts database connection
+func StartDatabase[T DBType](database T, entities ...any) error {
 	err := database.connect()
 	if err != nil {
 		return err
@@ -32,6 +33,7 @@ func Database[T DBType](database T, entities ...any) error {
 	return err
 }
 
+// DBManager returns database connection
 func DBManager() *gorm.DB {
 	return db
 }
